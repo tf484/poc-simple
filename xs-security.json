@@ -1,0 +1,22 @@
+{
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.us10.hana.ondemand.com/**"
+    ]
+  },
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    }
+  ]
+}

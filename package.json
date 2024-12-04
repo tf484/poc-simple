@@ -1,0 +1,38 @@
+{
+  "name": "poc-simple",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^8",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/eslint-plugin-cds": "^3",
+    "@sap/ux-specification": "^1.124.6",
+    "eslint": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "undeploy": "cf undeploy poc-simple-app --delete-services --delete-service-keys --delete-service-brokers",
+    "watch-parts": "cds watch --open parts/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": "hana"
+      },
+      "destinations": true,
+      "html5-repo": true
+    }
+  },
+  "sapux": [
+    "app/parts"
+  ]
+}
